@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="YoutubeArchiveClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/YoutubeArchiveClient_jar</output-path>
+    <root id="archive" name="YoutubeArchiveClient.jar">
+      <element id="module-output" name="YoutubeArchiveClient" />
+    </root>
+  </artifact>
+</component>
