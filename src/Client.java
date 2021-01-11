@@ -33,6 +33,7 @@ public class Client {
     }
 
     public void sendMessage(String msg) {
+        System.out.println("[OUT] " + msg);
         try {
             output.writeUTF(msg);
         } catch (IOException e) {
@@ -46,6 +47,7 @@ public class Client {
                 try {
                     String i = input.readUTF();
                     String[] args = i.split(";/");
+                    System.out.println("[IN] " + i);
                     switch (args[0]) {
                         case "+status": {
                             tableVideosModel.setColumnCount(0);
