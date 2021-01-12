@@ -92,6 +92,7 @@ public class Client {
                             tableMessagesColumnModel.getColumn(0).setPreferredWidth(100);
                             tableMessagesColumnModel.getColumn(1).setPreferredWidth(100);
                             tableMessagesColumnModel.getColumn(2).setPreferredWidth(10);
+                            break;
                         }
                         default: {
                             throw new UnknownInputException(i);
