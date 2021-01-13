@@ -33,16 +33,7 @@ public class GUI {
             client.sendMessage("?messages");
         });
         buttonAddVideo.addActionListener(e -> {
-            JFrame frame = new JFrame("Add video");
-            frame.setContentPane(new addVideoDialog().getPanel());
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-                e.printStackTrace();
-            }
-            frame.setVisible(true);
+            new addVideoDialog(client);
         });
     }
 
