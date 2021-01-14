@@ -27,7 +27,9 @@ public class addVideoDialog {
             frame.setVisible(false);
         });
         buttonSubmit.addActionListener(e -> {
-
+            ProgressGUI p = new ProgressGUI("Adding video...", new String[]{
+                    "Get Details", "Check existence", ""
+            })
         });
     }
 

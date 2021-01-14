@@ -32,9 +32,7 @@ public class GUI {
             client.sendMessage("?status");
             client.sendMessage("?messages");
         });
-        buttonAddVideo.addActionListener(e -> {
-            new addVideoDialog(client);
-        });
+        buttonAddVideo.addActionListener(e -> new addVideoDialog(client));
     }
 
     public JTable getTableVideos() {
