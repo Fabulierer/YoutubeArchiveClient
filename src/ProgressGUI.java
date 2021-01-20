@@ -14,9 +14,9 @@ public class ProgressGUI {
     private JLabel[] jobsIcon;
     private GridBagConstraints c;
 
-    private final ImageIcon ICON_SUCCESS = new ImageIcon("./res/success.png");
-    private final ImageIcon ICON_ERROR = new ImageIcon("./res/error.png");
-    private final ImageIcon ICON_LOADING = new ImageIcon("./res/loading.gif");
+    private final ImageIcon ICON_SUCCESS = new ImageIcon("success.png");
+    private final ImageIcon ICON_ERROR = new ImageIcon("error.png");
+    private final ImageIcon ICON_LOADING = new ImageIcon("loading.gif");
 
     public ProgressGUI(String title, String[] jobs) {
         JFrame frame = new JFrame("Progress");

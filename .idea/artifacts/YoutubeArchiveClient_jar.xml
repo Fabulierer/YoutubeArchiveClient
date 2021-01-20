@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/YoutubeArchiveClient_jar</output-path>
     <root id="archive" name="YoutubeArchiveClient.jar">
       <element id="module-output" name="YoutubeArchiveClient" />
+      <element id="directory" name="res">
+        <element id="dir-copy" path="$PROJECT_DIR$/res" />
+      </element>
     </root>
   </artifact>
 </component>

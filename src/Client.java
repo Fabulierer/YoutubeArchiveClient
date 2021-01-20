@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.HashMap;
 
 public class Client {
 
@@ -16,6 +17,8 @@ public class Client {
     private JTable tableVideos, tableMessages;
     private DefaultTableModel tableVideosModel, tableMessagesModel;
     private DefaultTableColumnModel tableVideosColumnModel, tableMessagesColumnModel;
+
+    private HashMap<String, addVideoDialog> addVideoDialogs;
 
 
     public Client(String ip, int port, GUI gui) throws IOException {
@@ -28,6 +31,7 @@ public class Client {
         tableMessages = gui.getTableMessages();
         tableMessagesModel = (DefaultTableModel) tableMessages.getModel();
         tableMessagesColumnModel = (DefaultTableColumnModel) tableMessages.getColumnModel();
+        addVideoDialogs = new HashMap<>();
 
         listenerLoop();
     }
@@ -94,6 +98,18 @@ public class Client {
                             tableMessagesColumnModel.getColumn(2).setPreferredWidth(10);
                             break;
                         }
+                        case "+add": {
+                            String videoId = args[1];
+                            addVideoDialog d = addVideoDialogs.get(videoId);
+                            d.getP().setDone(2);
+                            break;
+                        }
+                        case "-add": {
+                            String videoId = args[1];
+                            addVideoDialog d = addVideoDialogs.get(videoId);
+                            d.getP().setError(2, args[2]);
+                            break;
+                        }
                         default: {
                             throw new UnknownInputException(i);
                         }
@@ -105,6 +121,10 @@ public class Client {
             }
         });
         t.start();
+    }
+
+    public void addVideoDialogs(String id, addVideoDialog dialog) {
+        addVideoDialogs.put(id, dialog);
     }
 
 }
